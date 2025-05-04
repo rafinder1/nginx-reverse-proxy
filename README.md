@@ -8,18 +8,9 @@ Project based on Docker with automatic SSL, frontend and backend API in Flask.
 - `backend/` – API Flask
 - `reverse-proxy/` – nginx-proxy + Let’s Encrypt
 
-### Running the Backend with Docker
+### Running system with Docker Compose
 
-##### Build the Docker Image
+##### Run the images
 ```bash
-docker build -t backend-image:1.0 .
-```
-##### Run the Docker Container
-```bash
-docker run -d -p 5000:5000 --name backend backend-image:1.0
-```
-###### Accessing the API
-```
-http://localhost:5000/api/matches
-http://localhost:5000/api/teams
+docker compose up --build -d
 ```
