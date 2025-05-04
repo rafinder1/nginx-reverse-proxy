@@ -1,6 +1,8 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 teams = [
     {"id": 1, "name": "FC Barcelona"},
@@ -12,13 +14,16 @@ matches = [
     {"home": "Manchester City", "away": "Arsenal", "score": "3-0"},
 ]
 
+
 @app.route('/api/teams')
 def get_teams():
     return jsonify(teams)
 
+
 @app.route('/api/matches')
 def get_matches():
     return jsonify(matches)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
